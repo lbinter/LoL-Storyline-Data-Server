@@ -1,0 +1,22 @@
+spring:
+    application:
+        name: league.parser
+
+parser:
+    # RIOT API KEY
+    api: ""
+    # path to python.exe
+    python: ""
+    # path to working dir (containg "Results" folder, files from https://github.com/lbinter/LoL-Storyline-Data)
+    py_fileFolder: ""
+    py_main: "./main.py"
+    py_riotMatch: "./riotMatch.py"
+    py_analyze_G: "./analyze_G.py"
+    py_trajectory_G: "./trajectory_G.py"
+    py_battle_extractor2: "./battle-extractor2.py"
+    py_count1: "./count1.py"
+
+logging:
+    file.name: logs/parser.log
+    level:
+        root: INFO
