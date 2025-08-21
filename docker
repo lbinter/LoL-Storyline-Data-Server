@@ -1,4 +1,0 @@
-FROM openjdk:17-jdk-alpine
-VOLUME /tmp
-COPY league.parser-*.jar /league.parser.jar
-ENTRYPOINT ["java", "-jar", "/league.parser"]
