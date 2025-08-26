@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>LoL-Storyline-Data-Server Api</title>
+    <script type="text/javascript">
+
+        function getMatchAndAnalyze() {
+            parseFormAndCall("getMatchAndAnalyze_regionId",
+                'getMatchAndAnalyze_matchId',
+                '/getMatchAndAnalyze/{regionId}/{matchId}'
+            )
+        }
+        function deleteMatch() {
+            parseFormAndCall("deleteMatch_regionId",
+                'deleteMatch_matchId',
+                '/deleteMatch/{regionId}/{matchId}'
+            )
+        }
+        function getMatch() {
+            parseFormAndCall("getMatch_regionId",
+                'getMatch_matchId',
+                '/getMatch/{regionId}/{matchId}'
+            )
+        }
+        function analyze_G() {
+            parseFormAndCall("analyze_G_regionId",
+                'analyze_G_matchId',
+                '/analyze_G/{regionId}/{matchId}'
+            )
+        }
+        function trajectory_G() {
+            parseFormAndCall("trajectory_G_regionId",
+                'trajectory_G_matchId',
+                '/trajectory_G/{regionId}/{matchId}'
+            )
+        }
+        function battle_extractor2G() {
+            parseFormAndCall("battle_extractor2G_regionId",
+                'battle_extractor2G_matchId',
+                '/battle_extractor2G/{regionId}/{matchId}'
+            )
+        }
+        function count1() {
+            parseFormAndCall("count1_regionId",
+                'count1_matchId',
+                '/count1/{regionId}/{matchId}'
+            )
+        }
+
+        function parseFormAndCall(formId_region, formId_match, form_targetUrl){
+            var regionId, matchId;
+            regionId = document.getElementById(formId_region).value; 
+            matchId = document.getElementById(formId_match).value;
+            form_targetUrl = form_targetUrl.replace("{regionId}", regionId).replace("{matchId}", matchId);
+            console.log("regionId: "+ regionId);
+            console.log("matchId: "+ matchId);
+            console.log("target: "+ form_targetUrl);
+            window.open(location.origin+ form_targetUrl, '_blank')
+        }
+
+    </script>
+</head>
+
+<body>
+    <h2>Please see
+        <a href="https://github.com/lbinter/LoL-Storyline-Data-Server/">
+            https://github.com/lbinter/LoL-Storyline-Data-Server
+        </a>
+        for more details
+    </h2>
+
+    <h3>/getMatchAndAnalyze/{regionId}/{matchId}</h3>
+    <form id="getMatchAndAnalyze" action="javascript:getMatchAndAnalyze()">
+        <select id="getMatchAndAnalyze_regionId" name="getMatchAndAnalyze_regionId">
+            <option value="1">americas</option>
+            <option value="2">asia</option>
+            <option value="3" selected>europe</option>
+            <option value="4">sea</option>
+        </select>
+        <input type="text" id="getMatchAndAnalyze_matchId" name="getMatchAndAnalyze_matchId" value="matchId">
+        <input type="submit" value="Call Api">
+    </form>
+
+    <h3>/deleteMatch/{regionId}/{matchId}</h3>
+    <form id="deleteMatch" action="javascript:deleteMatch()">
+        <select id="deleteMatch_regionId" name="deleteMatch_regionId">
+            <option value="1">americas</option>
+            <option value="2">asia</option>
+            <option value="3" selected>europe</option>
+            <option value="4">sea</option>
+        </select>
+        <input type="text" id="deleteMatch_matchId" name="deleteMatch_matchId" value="matchId">
+        <input type="submit" value="Call Api">
+    </form>
+
+    <h3>/getMatch/{regionId}/{matchId}</h3>
+    <form id="getMatch" action="javascript:getMatch()">
+        <select id="getMatch_regionId" name="getMatch_regionId">
+            <option value="1">americas</option>
+            <option value="2">asia</option>
+            <option value="3" selected>europe</option>
+            <option value="4">sea</option>
+        </select>
+        <input type="text" id="getMatch_matchId" name="getMatch_matchId" value="matchId">
+        <input type="submit" value="Call Api">
+    </form>
+
+    <h3>/analyze_G/{regionId}/{matchId}</h3>
+    <form id="analyze_G" action="javascript:analyze_G()">
+        <select id="analyze_G_regionId" name="analyze_G_regionId">
+            <option value="1">americas</option>
+            <option value="2">asia</option>
+            <option value="3" selected>europe</option>
+            <option value="4">sea</option>
+        </select>
+        <input type="text" id="analyze_G_matchId" name="analyze_G_matchId" value="matchId">
+        <input type="submit" value="Call Api">
+    </form>
+
+    <h3>/trajectory_G/{regionId}/{matchId}</h3>
+    <form id="trajectory_G" action="javascript:trajectory_G()">
+        <select id="trajectory_G_regionId" name="trajectory_G_regionId">
+            <option value="1">americas</option>
+            <option value="2">asia</option>
+            <option value="3" selected>europe</option>
+            <option value="4">sea</option>
+        </select>
+        <input type="text" id="trajectory_G_matchId" name="trajectory_G_matchId" value="matchId">
+        <input type="submit" value="Call Api">
+    </form>
+
+    <h3>/battle_extractor2G/{regionId}/{matchId}</h3>
+    <form id="battle_extractor2G" action="javascript:battle_extractor2G()">
+        <select id="battle_extractor2G_regionId" name="battle_extractor2G_regionId">
+            <option value="1">americas</option>
+            <option value="2">asia</option>
+            <option value="3" selected>europe</option>
+            <option value="4">sea</option>
+        </select>
+        <input type="text" id="battle_extractor2G_matchId" name="battle_extractor2G_matchId" value="matchId">
+        <input type="submit" value="Call Api">
+    </form>
+
+    <h3>/count1/{regionId}/{matchId}</h3>
+    <form id="count1" action="javascript:count1()">
+        <select id="count1_regionId" name="count1_regionId">
+            <option value="1">americas</option>
+            <option value="2">asia</option>
+            <option value="3" selected>europe</option>
+            <option value="4">sea</option>
+        </select>
+        <input type="text" id="count1_matchId" name="count1_matchId" value="matchId">
+        <input type="submit" value="Call Api">
+    </form>
+
+</body>
+
+</html>
