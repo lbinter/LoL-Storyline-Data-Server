@@ -9,12 +9,16 @@ parser:
     python: ""
     # path to working dir (containg "Results" folder, files from https://github.com/lbinter/LoL-Storyline-Data)
     py_fileFolder: ""
+    # enable delete match
+    allow_delete: false
+    #python files
     py_main: "./main.py"
     py_riotMatch: "./riotMatch.py"
     py_analyze_G: "./analyze_G.py"
     py_trajectory_G: "./trajectory_G.py"
     py_battle_extractor2: "./battle-extractor2.py"
     py_count1: "./count1.py"
+    py_deleteMatch: "./deleteMatch.py"
 
 logging:
     file.name: logs/parser.log

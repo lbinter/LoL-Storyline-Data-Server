@@ -17,42 +17,37 @@ public class PythonCaller {
     public ParserConfiguration config;
     Logger log = LoggerFactory.getLogger(PythonCaller.class);
 
-    public int fetchMatchesFromRiot(String puuid) {
-        return fetchMatchesFromRiot(puuid, puuid);
-
-    }
-
-    public int fetchMatchesFromRiot(String puuid, String folder) {
-        return callPython(config.getPy_fileFolder() + "/" + config.getPy_riotMatch(), config.getApi(), puuid, folder);
-
-    }
-
-    public int fetchMatch(String matchId) {
-        // call riotMatch.py with Riot API KEY, match id and working directory location
-        return callPython(config.getPy_fileFolder() + "/" + config.getPy_riotMatch(), config.getApi(), matchId,
+    public int fetchMatch(int regionId, String matchId) {
+        // call riotMatch.py with region id, match id, Riot API KEY and working directory location
+        return callPython(config.getPy_fileFolder() + "/" + config.getPy_riotMatch(), Integer.toString(regionId), matchId, config.getApi(),
                 config.getPy_fileFolder());
     }
 
-    public int callAnalyze_G(String matchId) {
-        // call call analyze_G.py with match id, useMode = 1 and working directory location
-        return callPython(config.getPy_fileFolder() + "/" + config.getPy_analyze_G(), matchId, Integer.toString(1),
+    public int callAnalyze_G(int regionId, String matchId) {
+        // call call analyze_G.py with region id, match id, useMode = 2 and working directory location
+        return callPython(config.getPy_fileFolder() + "/" + config.getPy_analyze_G(), Integer.toString(regionId), matchId, Integer.toString(2),
                 config.getPy_fileFolder());
     }
 
-    public int callTrajectory_G(String matchId) {
-        // call call trajectory_G.py with match id, useMode = 1 and working directory location
-        return callPython(config.getPy_fileFolder() + "/" + config.getPy_trajectory_G(), matchId, Integer.toString(1),
+    public int callTrajectory_G(int regionId, String matchId) {
+        // call call trajectory_G.py with region id, match id, useMode = 2 and working directory location
+        return callPython(config.getPy_fileFolder() + "/" + config.getPy_trajectory_G(), Integer.toString(regionId), matchId, Integer.toString(2),
                 config.getPy_fileFolder());
     }
 
-    public int callBattle_extractor2G(String matchId) {
-        // call call battle-extractor2.py with match id and working directory location
-        return callPython(config.getPy_fileFolder() + "/" + config.getPy_battle_extractor2(), matchId, config.getPy_fileFolder());
+    public int callBattle_extractor2G(int regionId, String matchId) {
+        // call call battle-extractor2.py with region id, match id and working directory location
+        return callPython(config.getPy_fileFolder() + "/" + config.getPy_battle_extractor2(), Integer.toString(regionId), matchId, config.getPy_fileFolder());
     }
 
-    public int callCount1(String matchId) {
-        // call call Count1.py with match id and working directory location
-        return callPython(config.getPy_fileFolder() + "/" + config.getPy_count1(), matchId, config.getPy_fileFolder());
+    public int callCount1(int regionId, String matchId) {
+        // call call Count1.py with region id, match id and working directory location
+        return callPython(config.getPy_fileFolder() + "/" + config.getPy_count1(), Integer.toString(regionId), matchId, config.getPy_fileFolder());
+    }
+
+    public int deleteMatch(int regionId, String matchId) {
+        // call call deleteMatch.py with region id, match id and working directory location
+        return callPython(config.getPy_fileFolder() + "/" + config.getPy_deleteMatch(), Integer.toString(regionId), matchId, config.getPy_fileFolder());
     }
 
     private int callPython(String... params) {
@@ -89,5 +84,4 @@ public class PythonCaller {
         }
         return -1;
     }
-
 }

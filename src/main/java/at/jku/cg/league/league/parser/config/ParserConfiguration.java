@@ -9,12 +9,16 @@ public class ParserConfiguration {
     private String api;
     private String python;
     private String py_fileFolder;
+    
+    private boolean allow_delete;
+
     private String py_main;
     private String py_riotMatch;
     private String py_analyze_G;
     private String py_trajectory_G;
     private String py_battle_extractor2;
     private String py_count1;
+    private String py_deleteMatch;
 
     public String getApi() {
         return api;
@@ -38,6 +42,14 @@ public class ParserConfiguration {
 
     public void setPy_fileFolder(String py_fileFolder) {
         this.py_fileFolder = py_fileFolder;
+    }
+
+    public boolean isAllow_delete() {
+        return allow_delete;
+    }
+
+    public void setAllow_delete(boolean allow_delete) {
+        this.allow_delete = allow_delete;
     }
 
     public String getPy_main() {
@@ -86,5 +98,13 @@ public class ParserConfiguration {
 
     public void setPy_count1(String py_count1) {
         this.py_count1 = py_count1;
+    }
+
+    public String getPy_deleteMatch() {
+        return py_deleteMatch;
+    }
+
+    public void setPy_deleteMatch(String py_delete) {
+        this.py_deleteMatch = py_delete;
     }
 }
