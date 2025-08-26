@@ -1,4 +1,3 @@
-
 FROM python:3.10.12-alpine
 
 RUN apk add --no-cache bash build-base pkgconfig linux-headers openjdk17
