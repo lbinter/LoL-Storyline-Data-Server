@@ -1,6 +1,8 @@
 package at.jku.cg.league.league.parser.api;
 
 public class FetchAndAnalyze {
+    public int regionId = -1;
+    public String matchId = "-1";
     public int fetchMatchFromRiot = -1;
     public int analyze_G = -1;
     public int trajectory_G = -1;
